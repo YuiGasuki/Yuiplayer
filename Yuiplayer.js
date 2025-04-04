@@ -217,27 +217,23 @@ function Yuiplayer(Objert){
     
     
     
-    window.addEventListener("orientationchange",()=>{
-        if (window.orientation == 180 || window.orientation == 0) { 
-            document.body.style.overflow="auto";
-            document.documentElement.scrollTop=0;
-            YuiplayerFullButton.innerHTML = YuiplayerFullScreen;
-        }else if (window.orientation == 90 || window.orientation == -90 ){
-            document.body.style.overflow="hidden";
-                YuiplayerFullButton.innerHTML = YuiplayerFullBack;
-                document.documentElement.scrollTop=0;
-        }
-    });
+    
     
     YuiplayerFullButton.onclick = () =>{
         if(document.fullscreenElement!=null){
             document.exitFullscreen();
             document.getElementById("YuiplayerBox").className = "";
             YuiplayerVideo.className = "";
+            document.body.style.overflow="auto";
+            document.documentElement.scrollTop=0;
+            YuiplayerFullButton.innerHTML = YuiplayerFullScreen;
         }else{
             document.documentElement.requestFullscreen();
             document.getElementById("YuiplayerBox").className = "fullScreen";
             YuiplayerVideo.className = "fullScreenV";
+            document.body.style.overflow="hidden";
+                YuiplayerFullButton.innerHTML = YuiplayerFullBack;
+                document.documentElement.scrollTop=0;
         }
     }
     
