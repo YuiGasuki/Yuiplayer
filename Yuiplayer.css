@@ -1,0 +1,108 @@
+
+#YuiplayerBox {
+    margin:-8px 0px 0px -8px;
+}
+
+#YuiplayerVideo {
+    width:var(--PlayerWidth);
+    object-fit:contain;
+    background:black;
+}
+
+
+#YuiplayerPlayButton {
+    margin-left:8px;
+    margin-top:8px; 
+    position: absolute;
+}
+
+
+#YuiplayerToolBox {
+    width:var(--PlayerWidth);
+    height:40px;
+    background-image: linear-gradient(to top, black, rgba(0,0,0,0));    
+    transform: translate(0%,-100%);
+    margin-top:-3px;
+    padding-top:3px;
+    padding-bottom:6px;
+    overflow:hidden;
+}
+
+
+#YuiplayerFullButton {
+    margin-left:calc(100% - 14px);
+    height:40px;
+    display:flex; 
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;    
+    transform: translate(-100%,0%);
+}
+
+
+#YuiplayerTimeP {
+    margin-left:40px;
+    margin-top:8px; 
+    position: absolute;
+    font-size:0.8em;
+    height:24px;
+    color:#aaaaaa;
+    display:flex; 
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    pointer-events: none;
+}
+#YuiplayerProgressRanged {
+    width:100%;
+    height:4px;
+    margin-left:0px;
+    margin-top:-4px;
+    position: absolute;
+    opacity:0;
+}
+#YuiplayerProgressBox {
+    width:100%;
+    height:4px;
+    margin-left:0px;
+    background:#dedede;
+    --YuiplayerProgress:0%;
+}
+#YuiplayerProgressAlready {
+    width:100%;
+    height:4px;
+    margin-left:var(--YuiplayerProgress);
+    background:#DB000A;
+    transform: translate(-100%,0%);   
+    display:block; 
+}
+#YuiplayerProgressAlready::after {
+    content:"";
+    display: block;
+    width:10px;
+    height:10px;
+    position: absolute;
+    margin-top:-3px;
+    background:white;  
+    margin-left:  100%;
+    transform: translate(-50%,0%);
+    border-radius:50%;
+}
+#YuipalayerWarnP {
+    position: absolute;
+    height:20px;
+    margin-left:50%;
+    padding-left:16px;
+    padding-right:16px;
+    background:black;
+    z-index: 5;
+    border-radius:5px;
+    display:flex; 
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    color:white;
+    opacity:0;
+    pointer-events: none;
+    transform: translate(-50%,50%);
+}
