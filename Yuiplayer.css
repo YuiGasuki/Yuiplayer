@@ -1,45 +1,113 @@
-
-#YuiplayerBox {
-    margin:-8px 0px 0px -8px;
+:root {
+--zIndex:999999;
 }
 
-#YuiplayerVideo {
-    width:var(--PlayerWidth);
+.YuiplayerBox1 {
+    margin:0px;    
+    height:100vh;
+    width:100vw;
+    position:fixed;
+    top:0px;
+    left:0px;
+    z-index: var(--zIndex);
+    
+}
+
+.YuiplayerVideo1 {
+    height:100vh;
+    width:100vw;
+    max-width:auto;
     object-fit:contain;
     background:black;
 }
 
 
+.YuiplayerBox2 {
+    margin:0px;
+    width:var(--PlayerWidth);
+    position:relative;
+    max-width:var(--PlayerMaxWidth);
+    max-height:var(--PlayerMaxHeight);
+    padding:0px;
+}
+
+.YuiplayerVideo2 {
+    width:var(--PlayerWidth);
+    max-width:var(--PlayerMaxWidth);
+    max-height:var(--PlayerMaxHeight);
+    object-fit:contain;
+    background:black;
+}
+
+
+
 #YuiplayerPlayButton {
-    margin-left:8px;
+margin-left:8px; 
     margin-top:8px; 
     position: absolute;
 }
 
 
-#YuiplayerToolBox {
-    width:var(--PlayerWidth);
+.YuiplayerToolBox1 {
+width:100vw;
+    max-width:auto;
     height:40px;
     background-image: linear-gradient(to top, black, rgba(0,0,0,0));    
-    transform: translate(0%,-100%);
-    margin-top:-3px;
+    padding-top:3px;
+    padding-bottom:6px;
+    position: absolute;
+    bottom:0px;
+}
+.YuiplayerToolBox2 {
+width:var(--PlayerWidth);
+max-width:var(--PlayerMaxWidth);
+    height:40px;
+    background-image: linear-gradient(to top, black, rgba(0,0,0,0));    
     padding-top:3px;
     padding-bottom:6px;
     overflow:hidden;
+    margin-top:-49px;
+    position: absolute;
+    bottom:3px;
 }
-
 
 #YuiplayerFullButton {
-    margin-left:calc(100% - 14px);
     height:40px;
+    width:40px;
+    margin:0px;
     display:flex; 
-    flex-direction:column;
     align-items:center;
     justify-content:center;    
-    transform: translate(-100%,0%);
 }
-
-
+#YuiplayerVolumeButton {
+    margin:0px;
+    margin-left:auto;
+    height:30px;
+    width:30px;
+    padding:5px;
+    display:flex; 
+    align-items:center;
+    justify-content:center;   
+}
+#YuiplayerScreenshotButton {
+    height:30px;
+    width:30px;
+    padding:5px;
+    margin:0px;
+    display:flex; 
+    align-items:center;
+    justify-content:center;
+}
+#YuiplayerPlayList {
+    height:40px;
+    width:40px;
+    padding:0px;
+    margin:0px;
+    display:flex; 
+    align-items:center;
+    justify-content:center;
+    z-index:0;
+}
 #YuiplayerTimeP {
     margin-left:40px;
     margin-top:8px; 
@@ -105,4 +173,62 @@
     opacity:0;
     pointer-events: none;
     transform: translate(-50%,50%);
+}
+
+
+
+#YuiplayerBarrage p {
+    margin:0px;
+    padding:0px;
+    white-space: nowrap;
+    font-size:16px;
+    height:16px;
+    overflow:hidden;
+    transform: translateX(-100%);
+    animation:firstPAnime linear  10s;
+}
+@keyframes firstPAnime {
+from { transform: translateX(100%); }
+to { transform: translateX(-100%); }
+}
+#YuiplayerVideoList {
+position: absolute;
+right:0px;
+height:calc(100% - 3px);
+padding:0px 16px;
+background:#232323;
+overflow:auto;
+z-index:1;
+display:none;
+}
+#YuiplayerVideoListBack {
+position: absolute;
+left:0px;
+top:0px;
+width:100%;
+height:100%;
+background:none;
+z-index:1;
+display:none;
+
+}
+#YuiplayerVideoList div {
+width:148px;
+margin:8px 0px;
+position:relative;
+img {
+width:100%;
+aspect-ratio:3/2;
+object-fit:cover;
+filter:brightness(65%);
+}
+p{
+position: absolute;
+top:-8px;
+left:8px;
+color:#aaaaaa;
+}
+}
+#YuiplayerVideoList div:hover {
+color:#FF6699;
 }
