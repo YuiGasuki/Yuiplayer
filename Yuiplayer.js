@@ -125,7 +125,6 @@ let YuiplayerKeyAdjustProgress = null
 let YuiplayerKeyAdjustProgressTwo = null
     document.onkeydown = function(e) {
 let keyNum = window.event ? e.keyCode : e.which;
-console.log(keyNum)
 if(keyNum===37){
 YuiplayerVideo.currentTime-=6
 return
