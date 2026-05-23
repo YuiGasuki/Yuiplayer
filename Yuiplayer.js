@@ -19,13 +19,15 @@ const YuiplayerScreenshot = `<svg t="1777640204079" viewBox="0 0 1024 1024" vers
  
 let YuiplayerData;
 function Yuiplayer(Objert){
-    console.log("[Yuiplayer]\n %cYuiplayer v3.0%chttps://github.com/YuiGasuki/Yuiplayer","color:white;font-size:12px;padding:5px 7px;border-radius:3px 0px 0px 3px;background:#d84149;margin-bottom:16px", "font-size:12px;padding:5px;border-radius:0px 3px 3px 0px;background-color:white;")
+    console.log("[Yuiplayer]\n %cYuiplayer v3.1%chttps://github.com/YuiGasuki/Yuiplayer","color:white;font-size:12px;padding:5px 7px;border-radius:3px 0px 0px 3px;background:#d84149;margin-bottom:16px", "font-size:12px;padding:5px;border-radius:0px 3px 3px 0px;background-color:white;")
     YuiplayerData = Objert;
     let mainbox = document.getElementById(YuiplayerData.id);
     mainbox.innerHTML = `
     <style>
     #${YuiplayerData.id} {
     --PlayerWidth:${YuiplayerData.width};
+    --PlayerHeight:${Object.hasOwn(YuiplayerData, 'height') ? YuiplayerData.height : "auto"};
+    /*--PlayerHeightAuto:{Object.hasOwn(YuiplayerData, 'heightAuto') ? YuiplayerData.heightAuto : "false"};*/
     --PlayerMaxWidth:${YuiplayerData.maxWidth};
     --PlayerMaxHeight:${YuiplayerData.maxHeight};
     margin:0px;
@@ -125,6 +127,7 @@ let YuiplayerKeyAdjustProgress = null
 let YuiplayerKeyAdjustProgressTwo = null
     document.onkeydown = function(e) {
 let keyNum = window.event ? e.keyCode : e.which;
+console.log(keyNum)
 if(keyNum===37){
 YuiplayerVideo.currentTime-=6
 return

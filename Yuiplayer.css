@@ -25,6 +25,7 @@
 .YuiplayerBox2 {
     margin:0px;
     width:var(--PlayerWidth);
+    height:var(--PlayerHeight);
     position:relative;
     max-width:var(--PlayerMaxWidth);
     max-height:var(--PlayerMaxHeight);
@@ -33,6 +34,7 @@
 
 .YuiplayerVideo2 {
     width:var(--PlayerWidth);
+    height:var(--PlayerHeight);
     max-width:var(--PlayerMaxWidth);
     max-height:var(--PlayerMaxHeight);
     object-fit:contain;
@@ -68,7 +70,7 @@ max-width:var(--PlayerMaxWidth);
     overflow:hidden;
     margin-top:-49px;
     position: absolute;
-    bottom:3px;
+    bottom:0px;/* 3px */
 }
 
 #YuiplayerFullButton {
